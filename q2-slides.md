@@ -8,6 +8,16 @@ title: Product Documentation Presentation
 description: Technical documentation created using Marp
 ---
 
+<!-- _class: lead -->
+
+# Product Documentation  
+### Powered by **Marp**
+
+**Author:** Technical Writer  
+**Email:** <22f3002542@ds.study.iitm.ac.in>
+
+---
+
 <!--
 CUSTOM THEME
 -->
@@ -46,13 +56,7 @@ section strong {
 
 ---
 
-# Product Documentation  
-### Powered by **Marp**
-
-**Author:** Technical Writer  
-**Email:** <22f3002542@ds.study.iitm.ac.in>
-
----
+<!-- _backgroundColor: #123456 -->
 
 # Overview
 
@@ -63,8 +67,8 @@ section strong {
 
 ---
 
-<!-- Background image slide -->
-![bg opacity=0.25](https://images.unsplash.com/photo-1518770660439-4636190af475)
+<!-- _backgroundImage: url(https://images.unsplash.com/photo-1518770660439-4636190af475) -->
+<!-- _backgroundImageOpacity: 0.25 -->
 
 # Architecture Overview
 
@@ -74,23 +78,22 @@ section strong {
 
 ---
 
-# Algorithmic Complexity
+<!-- _color: red -->
 
-Using KaTeX math:
+# Algorithmic Complexity
 
 $$
 T(n) = O(n \log n)
 $$
 
-Examples:
-
-- Merge Sort  
+- Merge Sort:  
   $$O(n \log n)$$
-
-- Binary Search  
+- Binary Search:  
   $$O(\log n)$$
 
 ---
+
+<!-- _header: **Styling** -->
 
 # Custom Styling Example
 
@@ -108,14 +111,12 @@ section {
 
 ---
 
+<!-- _footer: "*Generated with Marp*" -->
+
 # Code Example
 
 ```js
 export async function fetchData() {
-  try {
-    const res = await fetch("/api/v1/data");
-    return await res.json();
-  } catch (err) {
-    console.error("Fetch failed:", err);
-  }
+  const res = await fetch("/api/v1/data");
+  return await res.json();
 }
