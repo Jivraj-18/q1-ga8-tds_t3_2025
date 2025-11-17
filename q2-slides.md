@@ -9,91 +9,51 @@ description: Technical documentation created using Marp
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "*Generated with Marp*" -->
 
-# Product Documentation  
-### Powered by **Marp**
+# Product Documentation
+### Developer-facing product docs & slides
 
 **Author:** Technical Writer  
-**Email:** <22f3002542@ds.study.iitm.ac.in>
+**Contact:** <22f3002542@ds.study.iitm.ac.in>
 
 ---
 
-<!--
-CUSTOM THEME
--->
-<style>
-@theme custom-theme {
-  background-color: #ffffff;
-  font-family: "Inter", sans-serif;
-}
+# Quick Overview
 
-section {
-  font-family: "Inter", sans-serif;
-  padding: 40px;
-}
-
-h1 {
-  color: #0059ff;
-}
-
-h2 {
-  color: #003399;
-}
-
-p {
-  font-size: 1.1rem;
-}
-
-footer {
-  font-size: 0.8rem;
-  color: #666;
-}
-
-section strong {
-  color: #ff6600;
-}
-</style>
-
----
-
-<!-- _backgroundColor: #123456 -->
-
-# Overview
-
-- Version-controlled Markdown  
-- Reusable documentation  
+- Version-controlled single-file presentation  
 - Exportable to **HTML**, **PDF**, **PPTX**  
-- Supports **Themes**, **Math**, **Code**, **Images**
+- Themeable and maintainable in Git
 
 ---
 
-<!-- _backgroundImage: url(https://images.unsplash.com/photo-1518770660439-4636190af475) -->
-<!-- _backgroundImageOpacity: 0.25 -->
+<!-- _backgroundColor: #0f172a -->
+
+![bg size=cover](https://images.unsplash.com/photo-1518770660439-4636190af475)
 
 # Architecture Overview
 
 - Modular components  
-- API-first workflow  
-- Cloud-native integration  
+- API-first design  
+- Cloud-native deployment
 
 ---
-
-<!-- _color: red -->
 
 # Algorithmic Complexity
 
-$$
-T(n) = O(n \log n)
-$$
+A common complexity result used in algorithms:
 
-- Merge Sort:  
-  $$O(n \log n)$$
-- Binary Search:  
-  $$O(\log n)$$
+Inline math example: $T(n) = O(n \log n)$
+
+Displayed math example:
+
+$$
+T(n) = \sum_{i=1}^{n} O(\log i) = O(n \log n)
+$$
 
 ---
 
-<!-- _header: **Styling** -->
+<!-- _color: #0033cc -->
 
 # Custom Styling Example
 
@@ -101,22 +61,21 @@ $$
 section {
   background: #eef3ff;
   border-left: 12px solid #0033cc;
+  padding: 36px;
 }
+h1 { color: #002366; }
 </style>
 
-## Styled Slide
-
-- Scoped CSS only affects this slide  
-- Great for callouts or warnings  
+This slide demonstrates scoped CSS and a color directive.
 
 ---
-
-<!-- _footer: "*Generated with Marp*" -->
 
 # Code Example
 
 ```js
-export async function fetchData() {
-  const res = await fetch("/api/v1/data");
-  return await res.json();
+// Example: fetch docs index
+export async function fetchDocsIndex() {
+  const res = await fetch('/api/docs/index');
+  if (!res.ok) throw new Error('Failed to fetch docs');
+  return res.json();
 }
