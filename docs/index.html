@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Reveal.js</title>
+
+  <!-- Reveal.js (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <!-- MathJax for equations -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <style>
+    /* small styling tweak for code blocks */
+    pre code { font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Title slide -->
+    <section>
+      <h1>Q3 2025 Quarterly Earnings</h1>
+      <h3>Financial Performance & Highlights</h3>
+      <p class="fragment">Prepared by: Technical Consulting</p>
+      <p class="fragment">Contact: <a href="mailto:22f3002542@ds.study.iitm.ac.in">22f3002542@ds.study.iitm.ac.in</a></p>
+
+      <aside class="notes">
+        Welcome stakeholders. Brief overview: agenda, financial summary, and strategic notes.
+      </aside>
+    </section>
+
+    <!-- Markdown slide (using data-markdown) -->
+    <section data-markdown>
+      <textarea data-template>
+## Executive Summary (Markdown slide)
+
+- **Revenue:** up 8% QoQ
+- **Net Income:** improved by 12% YoY
+- **Key drivers:**
+  - Growth in digital channels
+  - Cost optimization program
+
+> *This slide is written in Markdown.*  
+      </textarea>
+
+      <aside class="notes">
+        Speak to the top-line numbers and link them to initiatives in the company.
+      </aside>
+    </section>
+
+    <!-- Animated fragments slide -->
+    <section>
+      <h2>Highlights</h2>
+      <ul>
+        <li class="fragment">Digital revenue +22% (YoY)</li>
+        <li class="fragment">Cost savings: \$4.5M realized</li>
+        <li class="fragment">Customer retention up by 3 percentage points</li>
+      </ul>
+
+      <aside class="notes">
+        Use the fragments to reveal each bullet as you narrate.
+      </aside>
+    </section>
+
+    <!-- Code sample with syntax highlighting -->
+    <section>
+      <h2>Sample calculation (Python)</h2>
+
+      <pre><code class="language-python">
+# Simple NPV calculation (discount rate 8%)
+def npv(cashflows, discount_rate):
+    return sum(cf / ((1 + discount_rate) ** i) for i, cf in enumerate(cashflows, start=0))
+
+cashflows = [-100000, 30000, 40000, 50000, 60000]
+print("NPV:", npv(cashflows, 0.08))
+      </code></pre>
+
+      <aside class="notes">
+        Explain that this snippet is an example of how finance teams model project returns.
+      </aside>
+    </section>
+
+    <!-- JavaScript code sample -->
+    <section>
+      <h2>Data fetch (JS)</h2>
+      <pre><code class="language-js">
+// Fetch latest KPIs from internal API
+async function fetchKPI() {
+  const res = await fetch('/api/kpis');
+  const data = await res.json();
+  console.log(data);
+}
+      </code></pre>
+
+      <aside class="notes">
+        Note: replace `/api/kpis` with your real internal endpoint behind the firewall.
+      </aside>
+    </section>
+
+    <!-- Math / Financial formulas -->
+    <section>
+      <h2>Financial formulas</h2>
+
+      <p class="fragment">Net Present Value (NPV): $$\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$$</p>
+      <p class="fragment">Return on Investment (ROI): $$\mathrm{ROI} = \frac{Gain - Cost}{Cost} \times 100\%$$</p>
+
+      <aside class="notes">
+        Show how NPV changes when discount rate (r) moves by ±1% — use this to discuss sensitivity.
+      </aside>
+    </section>
+
+    <!-- A slide with fragments showing stepwise charts or notes -->
+    <section>
+      <h2>Quarterly Trend</h2>
+      <p class="fragment">Revenue growth visualization (embed or screenshot in production)</p>
+      <p class="fragment">Margin improvements attributed to automation</p>
+
+      <aside class="notes">
+        If you have an exported chart PNG, replace the placeholder text with an <img> for the audience.
+      </aside>
+    </section>
+
+    <!-- Closing / contact -->
+    <section>
+      <h2>Contact & Next Steps</h2>
+      <p class="fragment">Email: <a href="mailto:22f3002542@ds.study.iitm.ac.in">22f3002542@ds.study.iitm.ac.in</a></p>
+      <p class="fragment">Repo & Slides: <code>quarterly-earnings-report</code></p>
+
+      <aside class="notes">
+        Invite questions. Mention that the repo contains data appendix and code used to generate charts.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js and plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>
+  // Initialize Reveal
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight ],
+    markdown: {
+      // enable GitHub style line breaks
+      smartypants: true
+    }
+  });
+
+  // Register plugin shims (loaded from CDN via the global Reveal object)
+  // load markdown and highlight via their CDN modules
+  // RevealMarkdown and RevealHighlight are auto-included when using CDN bundle, but if not:
+  (function loadPlugins() {
+    // If the CDN didn't auto-attach the plugin variables, try to load them:
+    if (typeof RevealMarkdown === 'undefined') {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.js';
+      document.head.appendChild(s);
+    }
+    if (typeof RevealHighlight === 'undefined') {
+      const s2 = document.createElement('script');
+      s2.src = 'https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.js';
+      document.head.appendChild(s2);
+    }
+  })();
+</script>
+
+</body>
+</html>
